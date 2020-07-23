@@ -6,9 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" href="/docs/4.0/assets/img/favicons/favicon.ico">
+<!--    <link rel="icon" href="/docs/4.0/assets/img/favicons/favicon.ico">-->
 
-    <title>Album example for Bootstrap</title>
+    <title>Annant Gupta</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/album/">
 
@@ -24,22 +24,22 @@
 
 <header>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="#">Annant Gupta</a>
+        <a class="navbar-brand" href="{%  url 'home' %}">Annant Gupta</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
                 aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav ml-auto">
-                <a class="nav-item nav-link " href="#">Twitter </a>
+                <a class="nav-item nav-link " href="https://twitter.com/annant05">Twitter </a>
                 <a class="nav-item nav-link" href="{% static 'resume.pdf' %}">Resume</a>
-                <a class="nav-item nav-link" href="#">Blog</a>
+                <a class="nav-item nav-link" href="{%  url  'allblogs' %}">Blog</a>
             </div>
         </div>
     </nav>
 </header>
 
- <main role="main">
+<main role="main">
 
     <section class="jumbotron text-center">
         <div class="container">
@@ -57,16 +57,16 @@
         <div class="container">
 
             <div class="row">
-                     {%  for job in jobs.all  %}
+                {% for job in jobs.all %}
                 <div class="col-md-4">
                     <div class="card mb-4 box-shadow">
-                        <img class="card-img-top"  src="{{ job.image.url }}">
+                        <img class="card-img-top" src="{{ job.image.url }}">
                         <div class="card-body">
-                            <p class="card-text">{{  job.summary }}</p>
+                            <p class="card-text">{{ job.summary }}</p>
                         </div>
                     </div>
                 </div>
- {% endfor %}
+                {% endfor %}
             </div>
         </div>
     </div>
